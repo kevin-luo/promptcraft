@@ -64,7 +64,7 @@ PromptCraft Studio is a static app. Use any static host.
 
 ### GitHub Pages
 
-The repository includes a Pages workflow. Enable Pages with GitHub Actions as the source, then push to `main`.
+Use `Settings -> Pages`, then choose `Deploy from a branch` and select `main / root`. The repository also includes a manual Pages workflow for teams that prefer GitHub Actions.
 
 ### Docker
 

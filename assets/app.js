@@ -120,6 +120,8 @@ const els = {
   toast: document.querySelector("#toast"),
   dialog: document.querySelector("#prompt-dialog"),
   form: document.querySelector("#prompt-form"),
+  loadStarterButton: document.querySelector("#load-starter-button"),
+  importButton: document.querySelector("#import-button"),
   importInput: document.querySelector("#import-input"),
 };
 
@@ -205,6 +207,15 @@ function slugify(value) {
     .toLowerCase()
     .replace(/[^\w\u4e00-\u9fa5]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function replacePromptLibrary(prompts, message) {
+  state.prompts = prompts.map(normalizePrompt);
+  state.selectedId = state.prompts[0]?.id || "";
+  state.variableValues = {};
+  savePrompts();
+  showToast(message);
+  render();
 }
 
 function scorePrompt(template) {
@@ -454,8 +465,18 @@ document.querySelector("#new-button").addEventListener("click", () => {
   els.dialog.showModal();
 });
 
+function closeDialog() {
+  els.dialog.close();
+}
+
+document.querySelector("#dialog-close-button").addEventListener("click", closeDialog);
+document.querySelector("#dialog-cancel-button").addEventListener("click", closeDialog);
+
+els.dialog.addEventListener("click", (event) => {
+  if (event.target === els.dialog) closeDialog();
+});
+
 els.form.addEventListener("submit", (event) => {
-  if (event.submitter?.value === "cancel") return;
   event.preventDefault();
   const prompt = createPromptFromForm(new FormData(els.form));
   state.prompts.unshift(prompt);
@@ -569,6 +590,21 @@ document.querySelector("#export-button").addEventListener("click", () => {
   downloadJson(state.prompts, "promptcraft-library.json");
 });
 
+els.importButton.addEventListener("click", () => {
+  els.importInput.click();
+});
+
+els.loadStarterButton.addEventListener("click", async () => {
+  try {
+    const response = await fetch("prompts/starter-pack.zh-CN.json");
+    const prompts = await response.json();
+    if (!Array.isArray(prompts)) throw new Error("Invalid starter pack");
+    replacePromptLibrary(prompts, "模板包已加载");
+  } catch {
+    showToast("模板包加载失败");
+  }
+});
+
 els.importInput.addEventListener("change", async () => {
   const file = els.importInput.files?.[0];
   if (!file) return;
@@ -577,11 +613,7 @@ els.importInput.addEventListener("change", async () => {
     const imported = JSON.parse(text);
     const promptList = Array.isArray(imported) ? imported : [imported];
     if (!promptList.every((item) => item && typeof item === "object")) throw new Error("Invalid prompt library");
-    state.prompts = promptList.map(normalizePrompt);
-    state.selectedId = imported[0]?.id || "";
-    savePrompts();
-    showToast("导入完成");
-    render();
+    replacePromptLibrary(promptList, "导入完成");
   } catch {
     showToast("导入文件格式有误");
   } finally {

@@ -63,7 +63,7 @@ npm test
 
 ### GitHub Pages
 
-项目内置 Pages 工作流。仓库 Pages 来源选择 GitHub Actions，推送到 `main` 后自动发布。
+进入 `Settings -> Pages`，来源选择 `Deploy from a branch`，分支选择 `main / root`。项目也保留了手动触发的 Pages workflow，适合后续切到 GitHub Actions 发布。
 
 ### Docker
 

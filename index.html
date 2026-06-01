@@ -45,8 +45,9 @@
         </nav>
 
         <div class="sidebar-actions">
+          <button class="ghost-button" id="load-starter-button" type="button">加载模板包</button>
           <button class="ghost-button" id="export-button" type="button">导出 JSON</button>
-          <label class="ghost-button file-button" for="import-input">导入 JSON</label>
+          <button class="ghost-button" id="import-button" type="button">导入 JSON</button>
           <input id="import-input" type="file" accept="application/json" />
         </div>
       </aside>
@@ -115,18 +116,21 @@
 
               <div class="tag-row" id="detail-tags"></div>
 
-              <div class="editor-layout">
-                <div class="editor-column">
-                  <label for="template-editor">模板内容</label>
-                  <textarea id="template-editor" spellcheck="false"></textarea>
-                  <div class="editor-actions">
-                    <button class="secondary-button" id="save-template-button" type="button">保存修改</button>
-                    <button class="ghost-button" id="copy-template-button" type="button">复制模板</button>
-                    <button class="ghost-button" id="duplicate-button" type="button">复制为新模板</button>
-                    <button class="danger-button" id="delete-button" type="button">删除</button>
+              <div class="workbench-grid">
+                <div class="output-panel">
+                  <div class="section-head compact">
+                    <div>
+                      <h4>生成结果</h4>
+                      <p>变量填充后的最终提示词。</p>
+                    </div>
+                    <div class="output-actions">
+                      <button class="secondary-button" id="copy-share-button" type="button">复制分享卡片</button>
+                      <button class="secondary-button" id="export-single-button" type="button">导出模板</button>
+                      <button class="primary-button" id="copy-output-button" type="button">复制结果</button>
+                    </div>
                   </div>
+                  <pre id="rendered-output"></pre>
                 </div>
-
                 <div class="context-column">
                   <div>
                     <div class="section-head compact">
@@ -162,19 +166,21 @@
                 </div>
               </div>
 
-              <div class="output-panel">
+              <div class="editor-column template-editor-panel">
                 <div class="section-head compact">
                   <div>
-                    <h4>生成结果</h4>
-                    <p>变量填充后的最终提示词。</p>
+                    <h4>模板内容</h4>
+                    <p>编辑原始模板，保存后生成版本历史。</p>
                   </div>
-                  <div class="output-actions">
-                    <button class="secondary-button" id="copy-share-button" type="button">复制分享卡片</button>
-                    <button class="secondary-button" id="export-single-button" type="button">导出模板</button>
-                    <button class="primary-button" id="copy-output-button" type="button">复制结果</button>
+                  <div class="editor-actions">
+                    <button class="secondary-button" id="save-template-button" type="button">保存修改</button>
+                    <button class="ghost-button" id="copy-template-button" type="button">复制模板</button>
+                    <button class="ghost-button" id="duplicate-button" type="button">复制为新模板</button>
+                    <button class="danger-button" id="delete-button" type="button">删除</button>
                   </div>
                 </div>
-                <pre id="rendered-output"></pre>
+                <label class="sr-only" for="template-editor">模板内容</label>
+                <textarea id="template-editor" spellcheck="false"></textarea>
               </div>
             </div>
           </section>
@@ -183,13 +189,13 @@
     </div>
 
     <dialog class="prompt-dialog" id="prompt-dialog">
-      <form method="dialog" id="prompt-form">
+      <form id="prompt-form">
         <div class="dialog-head">
           <div>
             <p class="eyebrow">New Template</p>
             <h3>新建提示词模板</h3>
           </div>
-          <button class="icon-button" value="cancel" type="submit" aria-label="关闭">×</button>
+          <button class="icon-button" id="dialog-close-button" type="button" aria-label="关闭">×</button>
         </div>
 
         <div class="form-grid">
@@ -221,8 +227,8 @@
         </div>
 
         <div class="dialog-actions">
-          <button class="secondary-button" value="cancel" type="submit">取消</button>
-          <button class="primary-button" value="default" type="submit">创建模板</button>
+          <button class="secondary-button" id="dialog-cancel-button" type="button">取消</button>
+          <button class="primary-button" type="submit">创建模板</button>
         </div>
       </form>
     </dialog>

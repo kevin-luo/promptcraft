@@ -15,6 +15,7 @@ const requiredFiles = [
   "vercel.json",
   "netlify.toml",
   "site.webmanifest",
+  ".nojekyll",
   "prompts/starter-pack.zh-CN.json",
 ];
 

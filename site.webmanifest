@@ -1,0 +1,16 @@
+{
+  "name": "PromptCraft Studio",
+  "short_name": "PromptCraft",
+  "description": "Local-first prompt management platform for templates, favorites, variables, testing, and sharing.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#eef2f4",
+  "theme_color": "#11191b",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

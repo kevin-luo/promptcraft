@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PromptCraft Studio">
+  <rect width="64" height="64" rx="10" fill="#191916"/>
+  <path d="M18 18h18c8 0 13 5 13 12s-5 12-13 12h-8v8H18V18Zm10 9v6h8c2 0 4-1 4-3s-2-3-4-3h-8Z" fill="#fffdfa"/>
+  <path d="M41 45h10v5H41z" fill="#0e7c71"/>
+</svg>

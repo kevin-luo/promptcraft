@@ -1,0 +1,19 @@
+{
+  "name": "promptcraft-studio",
+  "version": "0.2.0",
+  "description": "Local-first prompt management platform for templates, favorites, variables, testing, and sharing.",
+  "private": false,
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/validate.js"
+  },
+  "keywords": [
+    "prompt",
+    "prompt-management",
+    "prompt-engineering",
+    "ai-tools",
+    "local-first"
+  ]
+}

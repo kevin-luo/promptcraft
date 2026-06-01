@@ -18,11 +18,11 @@ Prompts are becoming reusable product assets. Teams need a lightweight place to 
 - Search across titles, tags, descriptions, and template content
 - Variable slots using `{{variable}}`
 - One-click rendered prompt copy
-- Raw template copy, single-template export, and share-card copy
+- Raw template copy, single-template export, and template summary copy
 - Version history for edited prompts
 - Prompt quality checklist and score
 - JSON import and export for backup or sharing
-- Built-in Chinese templates for Xiaohongshu, WeChat, support, product copy, code review, RAG, AI assistants, and meeting notes
+- Built-in Chinese examples for content writing, support, product work, code review, RAG, AI assistants, and meeting notes
 - Starter prompt pack in `prompts/starter-pack.zh-CN.json`
 - Local-first storage through `localStorage`
 - One-command local demo with `node server.js`

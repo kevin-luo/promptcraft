@@ -19,66 +19,67 @@
           <div class="brand-mark" aria-hidden="true">P</div>
           <div>
             <h1>PromptCraft Studio</h1>
-            <p>提示词工坊</p>
+            <p data-i18n="brand.subtitle">提示词工坊</p>
           </div>
         </div>
 
-        <nav class="nav-stack" aria-label="Prompt categories">
+        <nav class="nav-stack" aria-label="Prompt categories" data-i18n-aria-label="aria.categories">
           <button class="nav-item is-active" data-filter="all">
-            <span>全部</span><strong id="count-all">0</strong>
+            <span data-i18n="nav.all">全部</span><strong id="count-all">0</strong>
           </button>
           <button class="nav-item" data-filter="favorite">
-            <span>收藏</span><strong id="count-favorite">0</strong>
+            <span data-i18n="nav.favorite">收藏</span><strong id="count-favorite">0</strong>
           </button>
-          <button class="nav-item" data-filter="内容创作">
-            <span>内容创作</span><strong id="count-content">0</strong>
+          <button class="nav-item" data-filter="content">
+            <span data-i18n="categories.content">内容创作</span><strong id="count-content">0</strong>
           </button>
-          <button class="nav-item" data-filter="运营增长">
-            <span>运营增长</span><strong id="count-growth">0</strong>
+          <button class="nav-item" data-filter="growth">
+            <span data-i18n="categories.growth">运营增长</span><strong id="count-growth">0</strong>
           </button>
-          <button class="nav-item" data-filter="产品研发">
-            <span>产品研发</span><strong id="count-product">0</strong>
+          <button class="nav-item" data-filter="product">
+            <span data-i18n="categories.product">产品研发</span><strong id="count-product">0</strong>
           </button>
-          <button class="nav-item" data-filter="知识管理">
-            <span>知识管理</span><strong id="count-knowledge">0</strong>
+          <button class="nav-item" data-filter="knowledge">
+            <span data-i18n="categories.knowledge">知识管理</span><strong id="count-knowledge">0</strong>
           </button>
         </nav>
 
         <div class="sidebar-actions">
-          <button class="ghost-button" id="load-starter-button" type="button">加载模板包</button>
-          <button class="ghost-button" id="export-button" type="button">导出 JSON</button>
-          <button class="ghost-button" id="import-button" type="button">导入 JSON</button>
-          <input id="import-input" type="file" accept="application/json" />
+          <button class="ghost-button" id="load-starter-button" type="button" data-i18n="actions.loadPack">加载模板包</button>
+          <button class="ghost-button" id="export-button" type="button" data-i18n="actions.exportJson">导出 JSON</button>
+          <button class="ghost-button" id="import-button" type="button" data-i18n="actions.importJson">导入 JSON</button>
+          <input id="import-input" type="file" accept="application/json" tabindex="-1" aria-hidden="true" />
         </div>
       </aside>
 
       <main class="workspace">
         <header class="topbar">
           <div>
-            <p class="eyebrow">Local-first Prompt Ops</p>
-            <h2>管理、复用、测试你的提示词资产</h2>
+            <p class="eyebrow" data-i18n="topbar.eyebrow">Local-first Prompt Ops</p>
+            <h2 data-i18n="topbar.title">管理、复用、测试你的提示词资产</h2>
           </div>
           <div class="topbar-actions">
-            <button class="secondary-button" id="reset-button" type="button">恢复示例</button>
-            <button class="primary-button" id="new-button" type="button">新建模板</button>
+            <button class="secondary-button language-toggle" id="language-button" type="button">EN</button>
+            <button class="secondary-button" id="reset-button" type="button" data-i18n="actions.reset">恢复示例</button>
+            <button class="primary-button" id="new-button" type="button" data-i18n="actions.newTemplate">新建模板</button>
           </div>
         </header>
 
-        <section class="metrics-row" aria-label="Prompt metrics">
+        <section class="metrics-row" aria-label="Prompt metrics" data-i18n-aria-label="aria.metrics">
           <div class="metric">
-            <span>模板</span>
+            <span data-i18n="metrics.templates">模板</span>
             <strong id="metric-total">0</strong>
           </div>
           <div class="metric">
-            <span>收藏</span>
+            <span data-i18n="metrics.favorites">收藏</span>
             <strong id="metric-favorites">0</strong>
           </div>
           <div class="metric">
-            <span>平均评分</span>
+            <span data-i18n="metrics.averageScore">平均评分</span>
             <strong id="metric-score">0</strong>
           </div>
           <div class="metric">
-            <span>变量槽位</span>
+            <span data-i18n="metrics.variables">变量槽位</span>
             <strong id="metric-vars">0</strong>
           </div>
         </section>
@@ -87,21 +88,21 @@
           <div class="library-pane">
             <div class="section-head">
               <div>
-                <h3>提示词库</h3>
-                <p>搜索、筛选、收藏和选择模板。</p>
+                <h3 data-i18n="library.title">提示词库</h3>
+                <p data-i18n="library.description">搜索、筛选、收藏和选择模板。</p>
               </div>
               <div class="search-box">
                 <span aria-hidden="true">⌕</span>
-                <input id="search-input" type="search" placeholder="搜索标题、标签、内容" />
+                <input id="search-input" type="search" placeholder="搜索标题、标签、内容" data-i18n-placeholder="library.search" />
               </div>
             </div>
             <div class="prompt-list" id="prompt-list" aria-live="polite"></div>
           </div>
 
-          <section class="detail-pane" aria-label="Prompt detail">
+          <section class="detail-pane" aria-label="Prompt detail" data-i18n-aria-label="aria.detail">
             <div class="detail-empty" id="empty-state">
-              <h3>选择一个模板开始</h3>
-              <p>左侧模板会在这里打开，变量填写后可一键生成最终提示词。</p>
+              <h3 data-i18n="empty.title">选择一个模板开始</h3>
+              <p data-i18n="empty.description">左侧模板会在这里打开，变量填写后可一键生成最终提示词。</p>
             </div>
 
             <div class="detail-content" id="detail-content" hidden>
@@ -111,7 +112,7 @@
                   <h3 id="detail-title"></h3>
                   <p id="detail-description"></p>
                 </div>
-                <button class="icon-button" id="favorite-button" type="button" aria-label="收藏模板">☆</button>
+                <button class="icon-button" id="favorite-button" type="button" aria-label="收藏模板" data-i18n-aria-label="aria.favorite">☆</button>
               </div>
 
               <div class="tag-row" id="detail-tags"></div>
@@ -120,13 +121,13 @@
                 <div class="output-panel">
                   <div class="section-head compact">
                     <div>
-                      <h4>生成结果</h4>
-                      <p>变量填充后的最终提示词。</p>
+                      <h4 data-i18n="output.title">生成结果</h4>
+                      <p data-i18n="output.description">变量填充后的最终提示词。</p>
                     </div>
                     <div class="output-actions">
-                      <button class="secondary-button" id="copy-share-button" type="button">复制分享卡片</button>
-                      <button class="secondary-button" id="export-single-button" type="button">导出模板</button>
-                      <button class="primary-button" id="copy-output-button" type="button">复制结果</button>
+                      <button class="secondary-button" id="copy-share-button" type="button" data-i18n="actions.copySummary">复制模板摘要</button>
+                      <button class="secondary-button" id="export-single-button" type="button" data-i18n="actions.exportTemplate">导出模板</button>
+                      <button class="primary-button" id="copy-output-button" type="button" data-i18n="actions.copyResult">复制结果</button>
                     </div>
                   </div>
                   <pre id="rendered-output"></pre>
@@ -135,8 +136,8 @@
                   <div>
                     <div class="section-head compact">
                       <div>
-                        <h4>变量</h4>
-                        <p>使用 {{变量名}} 创建槽位。</p>
+                        <h4 data-i18n="variables.title">变量</h4>
+                        <p data-i18n="variables.description">使用 {{变量名}} 创建槽位。</p>
                       </div>
                       <strong class="quality-score" id="variable-progress">0/0</strong>
                     </div>
@@ -146,8 +147,8 @@
                   <div>
                     <div class="section-head compact">
                       <div>
-                        <h4>质量检查</h4>
-                        <p>基于角色、上下文、约束、输出格式评分。</p>
+                        <h4 data-i18n="quality.title">质量检查</h4>
+                        <p data-i18n="quality.description">基于角色、上下文、约束、输出格式评分。</p>
                       </div>
                       <strong class="quality-score" id="quality-score">0</strong>
                     </div>
@@ -157,8 +158,8 @@
                   <div>
                     <div class="section-head compact">
                       <div>
-                        <h4>版本历史</h4>
-                        <p>保存修改时记录上一个版本。</p>
+                        <h4 data-i18n="history.title">版本历史</h4>
+                        <p data-i18n="history.description">保存修改时记录上一个版本。</p>
                       </div>
                     </div>
                     <div class="history-list" id="history-list"></div>
@@ -169,17 +170,17 @@
               <div class="editor-column template-editor-panel">
                 <div class="section-head compact">
                   <div>
-                    <h4>模板内容</h4>
-                    <p>编辑原始模板，保存后生成版本历史。</p>
+                    <h4 data-i18n="editor.title">模板内容</h4>
+                    <p data-i18n="editor.description">编辑原始模板，保存后生成版本历史。</p>
                   </div>
                   <div class="editor-actions">
-                    <button class="secondary-button" id="save-template-button" type="button">保存修改</button>
-                    <button class="ghost-button" id="copy-template-button" type="button">复制模板</button>
-                    <button class="ghost-button" id="duplicate-button" type="button">复制为新模板</button>
-                    <button class="danger-button" id="delete-button" type="button">删除</button>
+                    <button class="secondary-button" id="save-template-button" type="button" data-i18n="actions.saveChanges">保存修改</button>
+                    <button class="ghost-button" id="copy-template-button" type="button" data-i18n="actions.copyTemplate">复制模板</button>
+                    <button class="ghost-button" id="duplicate-button" type="button" data-i18n="actions.duplicate">复制为新模板</button>
+                    <button class="danger-button" id="delete-button" type="button" data-i18n="actions.delete">删除</button>
                   </div>
                 </div>
-                <label class="sr-only" for="template-editor">模板内容</label>
+                <label class="sr-only" for="template-editor" data-i18n="editor.title">模板内容</label>
                 <textarea id="template-editor" spellcheck="false"></textarea>
               </div>
             </div>
@@ -192,43 +193,43 @@
       <form id="prompt-form">
         <div class="dialog-head">
           <div>
-            <p class="eyebrow">New Template</p>
-            <h3>新建提示词模板</h3>
+            <p class="eyebrow" data-i18n="dialog.eyebrow">New Template</p>
+            <h3 data-i18n="dialog.title">新建提示词模板</h3>
           </div>
-          <button class="icon-button" id="dialog-close-button" type="button" aria-label="关闭">×</button>
+          <button class="icon-button" id="dialog-close-button" type="button" aria-label="关闭" data-i18n-aria-label="aria.close">×</button>
         </div>
 
         <div class="form-grid">
           <label>
-            标题
-            <input name="title" required placeholder="例如：小红书种草笔记" />
+            <span data-i18n="form.title">标题</span>
+            <input name="title" required placeholder="例如：会议纪要整理" data-i18n-placeholder="placeholders.title" />
           </label>
           <label>
-            分类
+            <span data-i18n="form.category">分类</span>
             <select name="category">
-              <option>内容创作</option>
-              <option>运营增长</option>
-              <option>产品研发</option>
-              <option>知识管理</option>
+              <option value="content" data-i18n="categories.content">内容创作</option>
+              <option value="growth" data-i18n="categories.growth">运营增长</option>
+              <option value="product" data-i18n="categories.product">产品研发</option>
+              <option value="knowledge" data-i18n="categories.knowledge">知识管理</option>
             </select>
           </label>
           <label class="span-2">
-            描述
-            <input name="description" required placeholder="一句话说明这个模板的使用场景" />
+            <span data-i18n="form.description">描述</span>
+            <input name="description" required placeholder="一句话说明这个模板的使用场景" data-i18n-placeholder="placeholders.description" />
           </label>
           <label class="span-2">
-            标签
-            <input name="tags" placeholder="用逗号分隔，例如：小红书,营销,内容" />
+            <span data-i18n="form.tags">标签</span>
+            <input name="tags" placeholder="用逗号分隔，例如：会议,知识库,团队" data-i18n-placeholder="placeholders.tags" />
           </label>
           <label class="span-2">
-            模板
-            <textarea name="template" required placeholder="写入模板内容，变量格式为 {{topic}}"></textarea>
+            <span data-i18n="form.template">模板</span>
+            <textarea name="template" required placeholder="写入模板内容，变量格式为 {{topic}}" data-i18n-placeholder="placeholders.template"></textarea>
           </label>
         </div>
 
         <div class="dialog-actions">
-          <button class="secondary-button" id="dialog-cancel-button" type="button">取消</button>
-          <button class="primary-button" type="submit">创建模板</button>
+          <button class="secondary-button" id="dialog-cancel-button" type="button" data-i18n="actions.cancel">取消</button>
+          <button class="primary-button" type="submit" data-i18n="actions.createTemplate">创建模板</button>
         </div>
       </form>
     </dialog>

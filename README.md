@@ -14,6 +14,7 @@ Prompts are becoming reusable product assets. Teams need a lightweight place to 
 ## Features
 
 - Prompt template library with categories and tags
+- Chinese and English interface switch with separate example libraries
 - Favorite prompts for fast access
 - Search across titles, tags, descriptions, and template content
 - Variable slots using `{{variable}}`
@@ -22,15 +23,15 @@ Prompts are becoming reusable product assets. Teams need a lightweight place to 
 - Version history for edited prompts
 - Prompt quality checklist and score
 - JSON import and export for backup or sharing
-- Built-in Chinese examples for content writing, support, product work, code review, RAG, AI assistants, and meeting notes
-- Starter prompt pack in `prompts/starter-pack.zh-CN.json`
+- Built-in Chinese and English examples for content writing, support, product work, code review, RAG, AI assistants, and meeting notes
+- Starter prompt packs in `prompts/starter-pack.zh-CN.json` and `prompts/starter-pack.en.json`
 - Local-first storage through `localStorage`
 - One-command local demo with `node server.js`
 - Static deployment support for Vercel, Netlify, Cloudflare Pages, GitHub Pages, and Docker
 
 ## Preview
 
-![PromptCraft Studio desktop preview](docs/screenshots/desktop.png)
+![PromptCraft Studio English desktop preview](docs/screenshots/desktop-en.png)
 
 ## Quick Start
 
@@ -38,10 +39,10 @@ Prompts are becoming reusable product assets. Teams need a lightweight place to 
 node server.js
 ```
 
-Open:
+Open the English interface:
 
 ```text
-http://localhost:4173
+http://localhost:4173/?lang=en
 ```
 
 Run the validation script:

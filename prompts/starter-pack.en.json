@@ -1,0 +1,35 @@
+[
+  {
+    "id": "starter-en-title-lab",
+    "title": "Title Experiment Lab",
+    "description": "Generate multiple headline angles for the same topic.",
+    "category": "content",
+    "tags": ["titles", "writing", "editorial"],
+    "favorite": true,
+    "updatedAt": "2026-06-01",
+    "history": [],
+    "template": "You are a content strategist.\n\nTopic: {{topic}}\nAudience: {{audience}}\nChannel: {{channel}}\n\nGenerate 20 headline options grouped by:\n1. Pain point\n2. Outcome\n3. Contrast\n4. Checklist\n5. Opinion\n\nAdd one usage note for each headline."
+  },
+  {
+    "id": "starter-en-research-synthesis",
+    "title": "User Research Synthesis",
+    "description": "Convert interview notes into needs, insights, and product opportunities.",
+    "category": "product",
+    "tags": ["research", "product", "insights"],
+    "favorite": false,
+    "updatedAt": "2026-06-01",
+    "history": [],
+    "template": "You are a product researcher.\n\nInterview notes:\n{{interview_notes}}\n\nProduce:\n1. Recurring pain points\n2. Representative user quotes\n3. Need priority\n4. Product opportunities\n5. Testable hypotheses\n6. Suggested next experiment\n\nConstraints: keep the evidence chain visible and avoid vague conclusions."
+  },
+  {
+    "id": "starter-en-release-plan",
+    "title": "Release Communication Plan",
+    "description": "Turn product changes into a clear communication schedule.",
+    "category": "growth",
+    "tags": ["release", "communication", "planning"],
+    "favorite": false,
+    "updatedAt": "2026-06-01",
+    "history": [],
+    "template": "You are a product communications lead.\n\nProduct change: {{product_change}}\nAudience: {{audience}}\nCommunication goal: {{goal}}\nImportant details: {{details}}\n\nCreate a seven-day communication plan:\n1. Daily theme\n2. Message angle\n3. Suggested channel\n4. CTA\n5. Required asset\n\nConstraints: keep the sequence coherent and easy for a small team to execute."
+  }
+]

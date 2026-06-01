@@ -17,6 +17,7 @@ const requiredFiles = [
   "site.webmanifest",
   ".nojekyll",
   "prompts/starter-pack.zh-CN.json",
+  "prompts/starter-pack.en.json",
 ];
 
 let failed = false;
@@ -31,7 +32,10 @@ for (const file of requiredFiles) {
 
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const app = fs.readFileSync(path.join(root, "assets/app.js"), "utf8");
-const starterPack = JSON.parse(fs.readFileSync(path.join(root, "prompts/starter-pack.zh-CN.json"), "utf8"));
+const starterPacks = [
+  JSON.parse(fs.readFileSync(path.join(root, "prompts/starter-pack.zh-CN.json"), "utf8")),
+  JSON.parse(fs.readFileSync(path.join(root, "prompts/starter-pack.en.json"), "utf8")),
+];
 
 for (const asset of ["assets/styles.css", "assets/app.js"]) {
   if (!html.includes(asset)) {
@@ -51,16 +55,18 @@ if (!app.includes("localStorage")) {
   failed = true;
 }
 
-if (!Array.isArray(starterPack) || starterPack.length < 3) {
-  console.error("Starter pack should include at least 3 prompts");
-  failed = true;
-}
+for (const starterPack of starterPacks) {
+  if (!Array.isArray(starterPack) || starterPack.length < 3) {
+    console.error("Starter pack should include at least 3 prompts");
+    failed = true;
+  }
 
-for (const prompt of starterPack) {
-  for (const key of ["id", "title", "category", "template"]) {
-    if (!prompt[key]) {
-      console.error(`Starter pack prompt is missing ${key}`);
-      failed = true;
+  for (const prompt of starterPack) {
+    for (const key of ["id", "title", "category", "template"]) {
+      if (!prompt[key]) {
+        console.error(`Starter pack prompt is missing ${key}`);
+        failed = true;
+      }
     }
   }
 }

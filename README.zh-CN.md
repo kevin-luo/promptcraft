@@ -14,6 +14,7 @@ PromptCraft Studio 是一个本地优先的提示词管理平台，面向创作�
 ## 核心功能
 
 - 提示词模板库，支持分类和标签
+- 中英文界面切换，示例库按语言分开
 - 收藏常用提示词
 - 搜索标题、标签、描述和模板正文
 - 使用 `{{变量名}}` 创建变量槽位
@@ -22,8 +23,8 @@ PromptCraft Studio 是一个本地优先的提示词管理平台，面向创作�
 - 保存修改时生成版本历史
 - 提示词质量检查与评分
 - JSON 导入导出，方便备份和分享
-- 内置内容写作、客服、产品工作、代码审查、RAG、AI 助手、会议纪要等中文示例模板
-- 提供 `prompts/starter-pack.zh-CN.json` 示例模板包
+- 内置内容写作、客服、产品工作、代码审查、RAG、AI 助手、会议纪要等中英文示例模板
+- 提供 `prompts/starter-pack.zh-CN.json` 和 `prompts/starter-pack.en.json` 示例模板包
 - 使用浏览器本地存储
 - 支持 Vercel、Netlify、Cloudflare Pages、GitHub Pages、Docker 等静态部署方式
 
